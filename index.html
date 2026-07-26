@@ -23,7 +23,7 @@
     <div id="meta" class="meta"></div>
   </main>
   <script>
-    fetch("./current.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(data=>{
+    fetch("https://raw.githubusercontent.com/jh758/codex-relay-link/main/current.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(data=>{
       if(!data.url) throw new Error("offline");
       const link=document.querySelector("#open");
       link.href=data.url;
